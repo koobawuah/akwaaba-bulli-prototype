@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 
 const LoginScreen = () => {
 
     return (
-        <View>
+        <SafeAreaView>
             <Text>Akwaabaa Bulli</Text>
-        </View>
+        </SafeAreaView>
     )
 }
 
