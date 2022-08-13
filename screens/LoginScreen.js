@@ -1,11 +1,14 @@
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
 
     return (
         <SafeAreaView>
             <Text>Akwaabaa Bulli</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Dash')}> 
+                <Text>Login</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
