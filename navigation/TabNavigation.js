@@ -1,7 +1,7 @@
 import { Text} from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { COLORS, } from "../constants"
-import { FavoriteScreen, BookingScreen, ChatScreen, DetailScreen } from "../screens"
+import { HomeScreen, FavoriteScreen, BookingScreen, ChatScreen, DetailScreen } from "../screens"
 import Feather from "react-native-vector-icons/Feather"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import StackNavigation from "./StackNavigation"
@@ -48,7 +48,7 @@ const TabNavigation = () => {
             />
             <Tabs.Screen 
                 name="MyBookings" 
-                component={DetailScreen} 
+                component={BookingScreen} 
                 options={{
                     tabBarLabel: ({focused}) => (focused?<Text style={{color: 'white', marginBottom: -10, fontWeight: '700' }}>Bookings</Text>:null),
                     tabBarIcon: ({size, color}) => <Feather name="calendar" size={size} color={color}/>,
