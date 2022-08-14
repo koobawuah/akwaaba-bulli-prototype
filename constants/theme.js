@@ -4,8 +4,8 @@ export const { width, height } = Dimensions.get('window');
 
 
 export const COLORS = {
-    primary: '#1D1717', //charcoal black
-    secondary: '#FFFFFF',
+    primary: '#010101', 
+    secondary: '#F1F1F1',
 
     accent: '#C9E0DD',
     darkGray: '#666666',
