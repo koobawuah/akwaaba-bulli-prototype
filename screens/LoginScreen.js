@@ -6,8 +6,8 @@ import {COLORS, SIZES, images} from '../constants';
 
 const LoginScreen = ({navigation}) => {
 
-    const [ email, setEmail ] = useState('hello');
-    const [pass, setPass ] = useState('hello');
+    const [ email, setEmail ] = useState('');
+    const [pass, setPass ] = useState('');
 
     return (
             <View style={{flex: 1, }}>

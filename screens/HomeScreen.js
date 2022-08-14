@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
         fontSize: 36, 
         fontWeight: '700', 
         color: COLORS.primary, 
-        display: 'flex' 
+        display: 'flex',
+        marginTop: -10,
     },
     menu : { 
         flex: 1,
