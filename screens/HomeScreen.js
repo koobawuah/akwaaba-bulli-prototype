@@ -1,26 +1,51 @@
-import { StyleSheet, View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
-import {COLORS, SIZES} from '../constants';
+import { useState } from 'react';
+import { StyleSheet, View, Text, SafeAreaView, TouchableOpacity, FlatList, ScrollView  } from 'react-native';
+import {COLORS, SIZES, Data, } from '../constants';
+import { MenuItem, ListItem } from '../components';
 
 
 const HomeScreen = ({navigation}) => {
 
+    const [active, setActive] = useState(0)
+    
     return (
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.secondary}}>
-            <View style={{flex: 1, paddingHorizontal: 25, paddingVertical: 15,  }}>
+        <View style={{flex: 1, marginTop: 50,  backgroundColor: COLORS.secondary}}>
+
+            <View style={{flex: 1.5, paddingHorizontal: 25, paddingVertical: 15, }}>
                 <Text style={styles.headerLine1}>for the love 
                 </Text>
                 <Text style={styles.mainHeader}>of Accra</Text>
             </View>
 
-            <View style={styles.menu}>
+            <ScrollView 
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={styles.menu}>
+                {Data?.menu.map( (item, index) => { 
+                    return (<TouchableOpacity onPress={ () => setActive(index) } key={index}>
+                        <MenuItem icon={active ===index?item.menuIcon:item.bwIcon} menu={item.menuTitle} active={active === index?true:false}/>
+                    </TouchableOpacity>)
+                    } 
+                )}  
+            </ScrollView>
+        
+            <View style={{flex:8, paddingBottom: 100, marginVertical: -5,  }}>
+                <FlatList 
+                    data={Data.events}
+                    renderItem={ ({item, index}) =>
+                        (
+                        <TouchableOpacity 
+                            onPress={() => {  navigation.navigate('Details', {itemId: index } )} } 
+                            key={index}> 
+                                <ListItem title={item.title} backgroundImage={item.eventImage}/> 
+                        </TouchableOpacity> 
+                        )
+                    }
+                    ListEmptyComponent={<Text> Sorry, nothing here </Text>}
+                    />
             </View>
 
-            <View style={{flex: 1, }}>
-                <TouchableOpacity style={styles.primaryButton}>
-                    <Text style={styles.buttonValue}> Making a booking</Text>
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -38,7 +63,8 @@ const styles = StyleSheet.create({
         display: 'flex' 
     },
     menu : { 
-        flex: 1, 
+        flex: 1,
+        marginHorizontal: 12,
     },
     primaryButton : { 
         width: SIZES.width - 80,
