@@ -34,7 +34,7 @@ const LoginScreen = ({navigation}) => {
 
                 <KeyboardAvoidingView 
                         style={{flex: 1, paddingVeritical: 5, }}
-                        behavior='padding'
+                        behavior={ Platform.OS === 'ios'?'padding':'height'}
                         >
                     <View style={{
                         width: SIZES.width - 25,
