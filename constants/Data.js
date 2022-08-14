@@ -42,7 +42,7 @@ export const Data = {
         },
         {
             id: 3,
-            title: 'Another \"On Bulli\" expeience',
+            title: '\"Bulli Ride\" roadtrip',
             location: 'Jamestown, Accra',
             description: 'Experience a nice trip filled with good music, people who are just getting into the space of experiencing a ride in a VW Bulli. Ready to have a great time?',
             attendees: '40',

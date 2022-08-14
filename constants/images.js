@@ -11,6 +11,7 @@ export const splashBgImage = require('../assets/images/Akwaababulli.jpg');
 export const bulliPicnic = require('../assets/images/BulliPicnic.jpg');
 export const jazzonBulli = require('../assets/images/jazzonBulli.jpg');
 export const logo = require('../assets/akwaababulli-logo.png');
+export const gps_icon = require('../assets/images/turn-right.png');
 
 
-export default { home_icon, home_black, heart_icon, calendar_icon, chat_icon, view_icon, dine_icon, dine_black, plane_icon, plane_black, splashBgImage, bulliPicnic, jazzonBulli, logo, }
+export default { home_icon, home_black, heart_icon, calendar_icon, chat_icon, view_icon, dine_icon, dine_black, plane_icon, plane_black, splashBgImage, bulliPicnic, jazzonBulli, logo, gps_icon, }

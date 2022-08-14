@@ -2555,6 +2555,8 @@ __metadata:
     "@react-navigation/native": ^6.0.11
     "@react-navigation/stack": ^6.2.2
     expo: ~46.0.6
+    expo-blur: ^11.2.0
+    expo-linear-gradient: ^11.4.0
     expo-status-bar: ~1.4.0
     react: 18.0.0
     react-native: 0.69.4
@@ -4170,6 +4172,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-blur@npm:^11.2.0":
+  version: 11.2.0
+  resolution: "expo-blur@npm:11.2.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 8acd08b9c7bc2e74d833ef6689d50e5118eff3ed6fbd0de0689005515eb7c15de00e781b258630e239a78df021eafdd9e7a5e573223072eb1d78c55e5d6618f2
+  languageName: node
+  linkType: hard
+
 "expo-constants@npm:~13.2.2, expo-constants@npm:~13.2.3":
   version: 13.2.3
   resolution: "expo-constants@npm:13.2.3"
@@ -4220,6 +4231,15 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: 83b400ccb68c6947c53426a9a30d5cfa384a8baf7797064ee2e9d5ecc121c302ac252b37ffaf618a262b8a9aa0bdfb45d204c66113569760989283785f087814
+  languageName: node
+  linkType: hard
+
+"expo-linear-gradient@npm:^11.4.0":
+  version: 11.4.0
+  resolution: "expo-linear-gradient@npm:11.4.0"
+  peerDependencies:
+    expo: "*"
+  checksum: cfa4909bb1885771d80b155b9b07fc761952a3a0d274caeddd984f089a03f79bcd0832360535e566321b6133f215563583495ed0d05e461758e48eeb37a690cd
   languageName: node
   linkType: hard
 
