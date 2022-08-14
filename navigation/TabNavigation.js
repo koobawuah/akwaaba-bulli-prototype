@@ -31,7 +31,7 @@ const TabNavigation = () => {
         >
             <Tabs.Screen 
                 name="Feed" 
-                component={StackNavigation} 
+                component={HomeScreen} 
                 options={{
                     tabBarLabel: ({focused}) => (focused?<Text style={{color: 'white', marginBottom: -10, fontWeight: '700' }}>Feed</Text>:null),
                     tabBarIcon: ({size, color}) => <Feather name="home" size={size} color={color}/>,
