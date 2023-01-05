@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, TouchableOpacity, FlatList, ScrollView  } from 'react-native';
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
+import { StyleSheet, Dimensions, View, Text, SafeAreaView, TouchableOpacity, FlatList, ScrollView  } from 'react-native';
 import {COLORS, SIZES, Data, } from '../constants';
 import { MenuItem, ListItem } from '../components';
 
@@ -7,9 +7,14 @@ import { MenuItem, ListItem } from '../components';
 const HomeScreen = ({navigation}) => {
 
     const [active, setActive] = useState(0)
+    const { height } = Dimensions.get('window')
+    
+    const tabSelect = useCallback((i) => {
+        setActive(i)
+    }, [active])
     
     return (
-        <View style={{flex: 1, marginTop: 50,  backgroundColor: COLORS.secondary}}>
+        <View style={{flex: 1, marginTop: 50, backgroundColor: COLORS.secondary}}>
 
             <View style={{flex: 1.5, paddingHorizontal: 25, paddingVertical: 15, }}>
                 <Text style={styles.headerLine1}>for the love 
@@ -22,14 +27,14 @@ const HomeScreen = ({navigation}) => {
                 showsHorizontalScrollIndicator={false}
                 style={styles.menu}>
                 {Data?.menu.map( (item, index) => { 
-                    return (<TouchableOpacity onPress={ () => setActive(index) } key={index}>
-                        <MenuItem icon={active ===index?item.menuIcon:item.bwIcon} menu={item.menuTitle} active={active === index?true:false}/>
+                    return (<TouchableOpacity onPress={ () => tabSelect(index) } key={index}>
+                        <MenuItem icon={active === index?item.menuIcon:item.bwIcon} menu={item.menuTitle} active={active === index?true:false}/>
                     </TouchableOpacity>)
                     } 
                 )}  
             </ScrollView>
         
-            <View style={{flex:8, paddingBottom: 100, marginVertical: -5,  }}>
+            <View style={{flex:8, paddingBottom: 100,   }}>
                 <FlatList 
                     data={Data.events}
                     renderItem={ ({item, index}) =>
@@ -41,7 +46,16 @@ const HomeScreen = ({navigation}) => {
                         </TouchableOpacity> 
                         )
                     }
-                    ListEmptyComponent={<Text> Sorry, nothing here </Text>}
+                    ListEmptyComponent={
+                        <View style={{
+                            paddingTop: height / 8,
+                            alignItems: "center",
+                        }}>
+                        <Text style={{ fontWeight: '700',}}> 
+                            Sorry, nothing here 
+                        </Text>
+                        </View>
+                    }
                     />
             </View>
 
